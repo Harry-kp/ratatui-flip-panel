@@ -1,0 +1,28 @@
+[package]
+name = "ratatui-flip-panel"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+description = "A two-faced ratatui widget that flips between front and back content with a horizontal-squish animation"
+authors = ["Harry KP <harrykp@users.noreply.github.com>"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/Harry-kp/ratatui-flip-panel"
+homepage = "https://github.com/Harry-kp/ratatui-flip-panel"
+documentation = "https://docs.rs/ratatui-flip-panel"
+keywords = ["ratatui", "terminal", "tui", "widget", "animation"]
+categories = ["command-line-interface", "visualization"]
+readme = "README.md"
+include = ["src/**/*", "examples/**/*", "README.md", "CHANGELOG.md", "LICENSE-MIT", "LICENSE-APACHE"]
+
+[dependencies]
+ratatui = "0.30"
+
+[dev-dependencies]
+crossterm = "0.29"
+
+[lints.rust]
+unsafe_code = "warn"
+
+[lints.clippy]
+all = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
