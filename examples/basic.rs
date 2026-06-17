@@ -112,10 +112,8 @@ fn main() -> io::Result<()> {
             if let Event::Key(key) = event::read()? {
                 match key.code {
                     KeyCode::Char('q') | KeyCode::Esc => break,
-                    KeyCode::Char('f') => {
-                        if state.flip() {
-                            flip_count = flip_count.saturating_add(1);
-                        }
+                    KeyCode::Char('f') if state.flip() => {
+                        flip_count = flip_count.saturating_add(1);
                     }
                     _ => {}
                 }
