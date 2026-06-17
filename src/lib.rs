@@ -58,11 +58,10 @@
 use std::borrow::Cow;
 use std::time::{Duration, Instant};
 
-use ratatui::buffer::Buffer;
-use ratatui::layout::Rect;
-use ratatui::style::Style;
-use ratatui::text::{Line, Span};
-use ratatui::widgets::{Paragraph, StatefulWidget, Widget};
+use ratatui_core::buffer::Buffer;
+use ratatui_core::layout::Rect;
+use ratatui_core::style::Style;
+use ratatui_core::widgets::StatefulWidget;
 
 /// Default minimum width at which the inner face renders. Below this
 /// the widget draws a single vertical bar (the panel "edge-on").
@@ -344,12 +343,13 @@ where
                 (self.front)(narrow, buf);
             }
         } else {
-            let edge = Paragraph::new(Line::from(Span::styled(
-                self.edge_glyph.clone(),
-                self.edge_style,
-            )))
-            .centered();
-            edge.render(narrow, buf);
+            let mid_x = narrow.x + narrow.width / 2;
+            let glyph = self.edge_glyph.as_ref();
+            for y in narrow.y..narrow.y.saturating_add(narrow.height) {
+                if let Some(cell) = buf.cell_mut((mid_x, y)) {
+                    cell.set_symbol(glyph).set_style(self.edge_style);
+                }
+            }
         }
     }
 }
