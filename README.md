@@ -101,7 +101,7 @@ impl App {
 
 ## Contributing
 
-See the [contribution guidelines](https://github.com/Harry-kp/vortix/blob/main/CONTRIBUTING.md).
+Bug reports, feature suggestions, and PRs are welcome — see [CONTRIBUTING.md](./CONTRIBUTING.md) for the workflow and the [Code of Conduct](./CODE_OF_CONDUCT.md).
 
 ## License
 
