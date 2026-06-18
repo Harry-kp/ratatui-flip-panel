@@ -6,6 +6,39 @@ A Ratatui widget for a two-faced panel that flips between front and back content
 [![docs.rs badge]][ratatui-flip-panel-docs]
 [![license badge]](./LICENSE-MIT)
 
+## Examples
+
+<table>
+  <tr>
+    <td align="center" width="50%" valign="top">
+      <b>basic</b><br>
+      <img src="https://raw.githubusercontent.com/Harry-kp/ratatui-flip-panel/main/assets/basic.gif?v=2" alt="basic example" />
+    </td>
+    <td align="center" width="50%" valign="top">
+      <b>playing_card</b><br>
+      <img src="https://raw.githubusercontent.com/Harry-kp/ratatui-flip-panel/main/assets/playing_card.gif?v=2" alt="playing_card example" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%" valign="top">
+      <b>flashcard</b><br>
+      <img src="https://raw.githubusercontent.com/Harry-kp/ratatui-flip-panel/main/assets/flashcard.gif?v=2" alt="flashcard example" />
+    </td>
+    <td align="center" width="50%" valign="top">
+      <b>album_view</b><br>
+      <img src="https://raw.githubusercontent.com/Harry-kp/ratatui-flip-panel/main/assets/album_view.gif?v=2" alt="album_view example" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2" valign="top">
+      <b>code_preview</b><br>
+      <img src="https://raw.githubusercontent.com/Harry-kp/ratatui-flip-panel/main/assets/code_preview.gif?v=2" alt="code_preview example" width="60%" />
+    </td>
+  </tr>
+</table>
+
+Each example is self-contained — copy one whole file into your own app to bootstrap. Recording tapes for the GIFs above are committed under [`tapes/`](./tapes); regenerate with `vhs tapes/<name>.tape`.
+
 ## Features
 
 - Pack two related views into the same panel — a front face and a back face
@@ -51,26 +84,6 @@ impl App {
     }
 }
 ```
-
-## Examples
-
-```shell
-cargo run --example basic          # minimal flip demo
-cargo run --example playing_card   # random poker card revealed on each flip
-cargo run --example flashcard      # Rust-trivia question / answer deck
-cargo run --example album_view     # vinyl-style now-playing ↔ tracklist
-cargo run --example code_preview   # markdown source ↔ styled preview
-```
-
-| example | demo |
-|---|---|
-| `basic` | ![basic](https://raw.githubusercontent.com/Harry-kp/ratatui-flip-panel/main/assets/basic.gif) |
-| `playing_card` | ![playing_card](https://raw.githubusercontent.com/Harry-kp/ratatui-flip-panel/main/assets/playing_card.gif) |
-| `flashcard` | ![flashcard](https://raw.githubusercontent.com/Harry-kp/ratatui-flip-panel/main/assets/flashcard.gif) |
-| `album_view` | ![album_view](https://raw.githubusercontent.com/Harry-kp/ratatui-flip-panel/main/assets/album_view.gif) |
-| `code_preview` | ![code_preview](https://raw.githubusercontent.com/Harry-kp/ratatui-flip-panel/main/assets/code_preview.gif) |
-
-Each example is self-contained — copy one whole file into your app to bootstrap.
 
 ## Tips
 
